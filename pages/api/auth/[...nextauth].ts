@@ -35,6 +35,19 @@ export const authOptions: NextAuthOptions = {
       token.userRole = "admin";
       return token;
     },
+    // Uncmomenting the code below is how I managed to circumvent the issue for my own project
+
+    // async redirect({ baseUrl, url }) {
+    //   const redirectUrl = decodeURIComponent(url);
+    //   const callbackIndex = redirectUrl.indexOf("callbackUrl=");
+    //   if (callbackIndex > -1) {
+    //     const callbackPath = redirectUrl.slice(callbackIndex + 12);
+    //     return callbackPath.includes(baseUrl)
+    //       ? baseUrl
+    //       : baseUrl + callbackPath;
+    //   }
+    //   return url;
+    // },
   },
 };
 
