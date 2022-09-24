@@ -42,6 +42,9 @@ export const authOptions: NextAuthOptions = {
     //   const callbackIndex = redirectUrl.indexOf("callbackUrl=");
     //   if (callbackIndex > -1) {
     //     const callbackPath = redirectUrl.slice(callbackIndex + 12);
+    //     // If I try to login from my homepage, the nested callbackUrl contains the full baseUrl.
+    //     // I return the baseUrl, even though the nested callbackUrl might contain another path, but my app doesn't use it.
+    //     // This behavior seems to be triggerd if you call `signIn()` from a page.
     //     return callbackPath.includes(baseUrl)
     //       ? baseUrl
     //       : baseUrl + callbackPath;
